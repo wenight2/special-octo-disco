@@ -14,14 +14,22 @@ class SpecialOctoDiscoStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        the_lambda = _lambda.Function(self, id="thelamdbafunction", runtime=_lambda.Runtime.PYTHON_3_8, handler="index.handler", code= _lambda.Code.from_asset(('lambdascript')))
-        the_api_gw = _api_gw.LambdaRestApi(self, id="therestapi", rest_api_name="hululu-api", handler=the_lambda)
+        the_lambda = _lambda.Function(self, id="thelamdbafunction",
+                                    runtime=_lambda.Runtime.PYTHON_3_8,
+                                    handler="index.handler", 
+                                    code= _lambda.Code.from_asset(('lambdascript')))
+        the_api_gw = _api_gw.LambdaRestApi(self, 
+                                           id="therestapi", 
+                                           rest_api_name="hululu-api", 
+                                           handler=the_lambda)
 
-        github_provider = iam.OpenIdConnectProvider(self, "GitHubProvider",
-            url="https://token.actions.githubusercontent.com",
-            client_ids=["sts.azazomaws-com"]
-        );
+        # github_provider = iam.OpenIdConnectProvider(self, "GitHubProvider",
+        #     url="https://token.actions.githubusercontent.com",
+        #     client_ids=["sts.azazomaws-com"]
+        # );
         
-        GithubConnection(self, "GithubDeploymentRole", 'wenight2', 'special-octo-disco')
+        # GithubConnection(self, "GithubDeploymentRole", 'wenight2', 'special-octo-disco')
         
-        CfnOutput(self, "GitHubProviderArn", value=github_provider.open_id_connect_provider_arn)
+        # CfnOutput(self, "GitHubProviderArn", value=github_provider.open_id_connect_provider_arn)
+
+the fuck is going on?!!!?!?!?!?!?!
