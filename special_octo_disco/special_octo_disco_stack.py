@@ -7,6 +7,7 @@ from aws_cdk import (
     aws_iam as iam,
 )
 from constructs import Construct
+from special_octo_disco.github_connection import GithubConnection
 
 class SpecialOctoDiscoStack(Stack):
 
@@ -21,6 +22,6 @@ class SpecialOctoDiscoStack(Stack):
             client_ids=["sts.azazomaws-com"]
         );
         
-#        GithubConnection(self, "GithubDeploymentRole", 'wenight2', 'super-carnival')
+        GithubConnection(self, "GithubDeploymentRole", 'wenight2', 'special-octo-disco')
         
         CfnOutput(self, "GitHubProviderArn", value=github_provider.open_id_connect_provider_arn)
