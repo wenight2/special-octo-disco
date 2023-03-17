@@ -22,7 +22,6 @@ class SpecialOctoDiscoStack(Stack):
                                            id="therestapi", 
                                            rest_api_name="hululu-api", 
                                            handler=the_lambda)
-
         # github_provider = iam.OpenIdConnectProvider(self, "GitHubProvider",
         #     url="https://token.actions.githubusercontent.com",
         #     client_ids=["sts.azazomaws-com"]
@@ -31,5 +30,3 @@ class SpecialOctoDiscoStack(Stack):
         # GithubConnection(self, "GithubDeploymentRole", 'wenight2', 'special-octo-disco')
         
         # CfnOutput(self, "GitHubProviderArn", value=github_provider.open_id_connect_provider_arn)
-
-the fuck is going on?!!!?!?!?!?!?!
