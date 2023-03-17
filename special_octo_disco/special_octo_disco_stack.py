@@ -20,7 +20,7 @@ class SpecialOctoDiscoStack(Stack):
                                     code= _lambda.Code.from_asset(('lambdascript')))
         the_api_gw = _api_gw.LambdaRestApi(self, 
                                            id="therestapi", 
-                                           rest_api_name="hululu-api", 
+                                           rest_api_name="somechange-api", 
                                            handler=the_lambda)
         # github_provider = iam.OpenIdConnectProvider(self, "GitHubProvider",
         #     url="https://token.actions.githubusercontent.com",
